@@ -13,6 +13,12 @@
     },
     "demo": {
       "tags": []
+    },
+    "radio-e2e": {
+      "tags": []
+    },
+    "radio": {
+      "tags": []
     }
   }
 }

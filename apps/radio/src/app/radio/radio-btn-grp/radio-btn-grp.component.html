@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="btn-box">
+      <div>
+        <input
+          type="radio"
+          (click)="setValue('option 1')"
+          [name]="sel_id"
+          value="option 1"
+          id="{{ sel_id + 'option 1' }}"
+        /><label for="{{ sel_id + 'option 1' }}">Option 1</label>
+      </div>
+      <div>
+        <input
+          type="radio"
+          (click)="setValue('option 2')"
+          [name]="sel_id"
+          value="option 2"
+          id="{{ sel_id + 'option 2' }}"
+        /><label for="{{ sel_id + 'option 2' }}">Option 2</label>
+      </div>
+      <div>
+        <input
+          type="radio"
+          (click)="setValue('option 3')"
+          [name]="sel_id"
+          value="option 3"
+          id="{{ sel_id + 'option 3' }}"
+        /><label for="{{ sel_id + 'option 3' }}">Option 3</label>
+      </div>
+    </div>
+  </div>
+</div>

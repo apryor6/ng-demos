@@ -116,6 +116,120 @@
           }
         }
       }
+    },
+    "radio": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/workspace:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/radio",
+      "sourceRoot": "apps/radio/src",
+      "prefix": "demo",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/radio",
+            "index": "apps/radio/src/index.html",
+            "main": "apps/radio/src/main.ts",
+            "polyfills": "apps/radio/src/polyfills.ts",
+            "tsConfig": "apps/radio/tsconfig.app.json",
+            "assets": ["apps/radio/src/favicon.ico", "apps/radio/src/assets"],
+            "styles": ["apps/radio/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/radio/src/environments/environment.ts",
+                  "with": "apps/radio/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "radio:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "radio:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "radio:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/radio/tsconfig.app.json",
+              "apps/radio/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/radio/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/radio/jest.config.js",
+            "tsConfig": "apps/radio/tsconfig.spec.json",
+            "setupFile": "apps/radio/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "radio-e2e": {
+      "root": "apps/radio-e2e",
+      "sourceRoot": "apps/radio-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/radio-e2e/cypress.json",
+            "tsConfig": "apps/radio-e2e/tsconfig.e2e.json",
+            "devServerTarget": "radio:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "radio:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/radio-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**", "!apps/radio-e2e/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -1,0 +1,22 @@
+<div style="text-align:center">
+  <h1>Welcome to {{ title }}!</h1>
+</div>
+
+<h2>Selected value A: {{ radioA.selected }}</h2>
+<h2>Selected value B: {{ radioB.selected }}</h2>
+<h2>Selected value C: {{ radioC.selected }}</h2>
+<demo-radio-btn-grp
+  sel_id="A"
+  #radioA
+  (selectionChange)="log($event)"
+></demo-radio-btn-grp>
+<demo-radio-btn-grp
+  sel_id="B"
+  #radioB
+  (selectionChange)="log($event)"
+></demo-radio-btn-grp>
+<demo-radio-btn-grp
+  sel_id="C"
+  #radioC
+  (selectionChange)="log($event)"
+></demo-radio-btn-grp>
