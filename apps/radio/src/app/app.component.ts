@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'radio';
-
-  log(option: string) {
-    console.log(`option = ${option}`);
-  }
 }
