@@ -9,7 +9,6 @@ export class RadioButtonGroupComponent implements OnInit {
   selected: string;
 
   @Input() sel_id: string;
-  @Output() selectionChange: EventEmitter<string> = new EventEmitter<string>();
   constructor() {}
 
   ngOnInit() {}
@@ -17,6 +16,5 @@ export class RadioButtonGroupComponent implements OnInit {
   setValue(value: string) {
     console.log(`value = ${value}`);
     this.selected = value;
-    this.selectionChange.emit(value);
   }
 }
