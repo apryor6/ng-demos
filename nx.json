@@ -19,6 +19,12 @@
     },
     "radio": {
       "tags": []
+    },
+    "di-directive-e2e": {
+      "tags": []
+    },
+    "di-directive": {
+      "tags": []
     }
   }
 }
