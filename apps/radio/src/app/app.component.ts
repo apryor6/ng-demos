@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { RadioButtonGroupComponent } from './radio/radio-btn-grp/radio-btn-grp.component';
 
 @Component({
   selector: 'demo-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  @ViewChild(RadioButtonGroupComponent) radioA: RadioButtonGroupComponent;
   title = 'radio';
 }
