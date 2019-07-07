@@ -1,11 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 .zoom {
-  animation: zoom 1s linear;
+  animation: zoom 5s linear;
 }
 
 @keyframes zoom {
   to {
-    transform: translateY(30rem);
+    transform: scale(5);
     opacity: 0;
   }
+}
+
+.circle {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  // top: 0;
+  // left: 0;
+  z-index: 10;
 }
