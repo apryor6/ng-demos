@@ -25,6 +25,12 @@
     },
     "di-directive": {
       "tags": []
+    },
+    "jsripple-e2e": {
+      "tags": []
+    },
+    "jsripple": {
+      "tags": []
     }
   }
 }
