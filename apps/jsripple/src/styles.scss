@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.zoom {
+  animation: zoom 1s linear;
+}
+
+@keyframes zoom {
+  to {
+    transform: translateY(30rem);
+    opacity: 0;
+  }
+}
