@@ -16,12 +16,9 @@
 
   &:hover {
     cursor: pointer;
-    // transform: translateY(-0.3rem);
-
-    // overflow: hidden;
+    transform: translateY(-0.3rem);
     &:active {
-      // overflow: hidden;
-      // transform: translateY(-0.15rem);
+      transform: translateY(-0.15rem);
     }
   }
 }

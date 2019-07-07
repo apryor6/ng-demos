@@ -1,11 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 .zoom {
-  animation: zoom 5s linear;
+  animation: zoom 0.5s linear;
 }
-
+.col {
+  width: 50%;
+}
 @keyframes zoom {
   to {
-    transform: scale(5);
+    transform: scale(10);
     opacity: 0;
   }
 }
@@ -14,9 +16,7 @@
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   position: absolute;
-  // top: 0;
-  // left: 0;
   z-index: 10;
 }
