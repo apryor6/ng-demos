@@ -5,7 +5,8 @@ import {
   AfterViewInit,
   Input,
   Self,
-  AfterContentInit
+  AfterContentInit,
+  OnInit
 } from '@angular/core';
 
 @Directive({
