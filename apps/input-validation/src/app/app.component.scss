@@ -1,11 +1,25 @@
 .main-container {
+  background-color: #bbb;
+  margin: 0 auto;
+  width: 90%;
+  border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
+  background-color: white;
 }
 
 .main-container h2 {
   text-align: center;
   width: 100%;
+}
+
+.main-container input {
+  font-size: 1.3rem;
+  border: 1px solid cornflowerblue;
+}
+
+input:focus {
+  outline: 6px solid rgb(103, 184, 103);
 }
 
 .card-block {
@@ -19,4 +33,5 @@
   height: 10rem;
   width: 20rem;
   margin: 2rem 2rem;
+  padding: 1rem;
 }
