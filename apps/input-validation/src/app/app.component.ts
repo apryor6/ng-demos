@@ -6,13 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  value1 = 'value1';
-  value2 = 'value2';
-  value3 = 'value3';
-  _value4 = 'value4';
-  value5 = 'value5';
-  value6 = 'value6';
-  value7 = 'value7';
+  value1 = '1';
+  value2 = '2';
+  value3 = '3';
+  _value4 = '4';
+  value5 = '5';
+  value6 = '6';
+  value7 = '7';
 
   get value4() {
     return this._value4;
