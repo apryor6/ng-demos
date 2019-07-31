@@ -1,0 +1,17 @@
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px black;
+  height: 10rem;
+  width: 20rem;
+  margin: 2rem 2rem;
+}

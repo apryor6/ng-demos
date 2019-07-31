@@ -1,25 +1,79 @@
-<div style="text-align:center">
-  <h1>Welcome to {{ title }}!</h1>
-  <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png"
-  />
+<div class="main-container">
+  <h1 style="text-align:center; width:100%">
+    Binding examples filtering out vowels in stored valued
+  </h1>
+  <div class="card-block">
+    <h2>Native DOM event bindings</h2>
+    <input
+      [value]="value1"
+      (input)="value1 = removeVowels($event.target.value)"
+    />
+    <div>
+      <p>
+        stored: <em>{{ value1 }}</em>
+      </p>
+    </div>
+  </div>
+  <div class="card-block">
+    <h2>Native DOM event bindings (allow vowels to be typed)</h2>
+    <input
+      value="value2"
+      (input)="value2 = removeVowels($event.target.value)"
+    />
+    <div>
+      <p>
+        stored: <em>{{ value2 }}</em>
+      </p>
+    </div>
+  </div>
+
+  <div class="card-block">
+    <h2>Using ngModel w/ ngModelChange</h2>
+    <input [ngModel]="value3" (ngModelChange)="value3 = removeVowels($event)" />
+    <div>
+      <p>
+        stored: <em>{{ value3 }}</em>
+      </p>
+    </div>
+  </div>
+
+  <div class="card-block">
+    <h2>Using ngModel w/ ngModelChange (allow vowels to be typed)</h2>
+    <input ngModel="value7" (ngModelChange)="value7 = removeVowels($event)" />
+    <div>
+      <p>
+        stored: <em>{{ value7 }}</em>
+      </p>
+    </div>
+  </div>
+
+  <div class="card-block">
+    <h2>Using TypeScript get/set with ngModel</h2>
+    <input [(ngModel)]="value4" />
+    <div>
+      <p>
+        stored: <em>{{ value4 }}</em>
+      </p>
+    </div>
+  </div>
+
+  <div class="card-block">
+    <h2>Using custom directive</h2>
+    <input [value]="value5" removeVowels overwrite="true" #rv="removeVowels" />
+    <div>
+      <p>
+        stored: <em>{{ rv.internalValue }}</em>
+      </p>
+    </div>
+  </div>
+
+  <div class="card-block">
+    <h2>Using custom directive (allow vowels to be typed)</h2>
+    <input [value]="value6" removeVowels #rv2="removeVowels" />
+    <div>
+      <p>
+        stored: <em>{{ rv2.internalValue }}</em>
+      </p>
+    </div>
+  </div>
 </div>
-
-<p>This is an Angular app built with <a href="https://nx.dev">Nx</a>.</p>
-<p>🔎 **Nx is a set of Angular CLI power-ups for modern development.**</p>
-
-<h2>Quick Start & Documentation</h2>
-
-<ul>
-  <li>
-    <a href="https://nx.dev/getting-started/what-is-nx"
-      >30-minute video showing all Nx features</a
-    >
-  </li>
-  <li>
-    <a href="https://nx.dev/tutorial/01-create-application"
-      >Interactive tutorial</a
-    >
-  </li>
-</ul>
