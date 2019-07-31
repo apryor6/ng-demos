@@ -230,6 +230,240 @@
           }
         }
       }
+    },
+    "popmotion": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/workspace:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/popmotion",
+      "sourceRoot": "apps/popmotion/src",
+      "prefix": "demo",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/popmotion",
+            "index": "apps/popmotion/src/index.html",
+            "main": "apps/popmotion/src/main.ts",
+            "polyfills": "apps/popmotion/src/polyfills.ts",
+            "tsConfig": "apps/popmotion/tsconfig.app.json",
+            "assets": [
+              "apps/popmotion/src/favicon.ico",
+              "apps/popmotion/src/assets"
+            ],
+            "styles": ["apps/popmotion/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/popmotion/src/environments/environment.ts",
+                  "with": "apps/popmotion/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "popmotion:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "popmotion:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "popmotion:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/popmotion/tsconfig.app.json",
+              "apps/popmotion/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/popmotion/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/popmotion/jest.config.js",
+            "tsConfig": "apps/popmotion/tsconfig.spec.json",
+            "setupFile": "apps/popmotion/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "popmotion-e2e": {
+      "root": "apps/popmotion-e2e",
+      "sourceRoot": "apps/popmotion-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/popmotion-e2e/cypress.json",
+            "tsConfig": "apps/popmotion-e2e/tsconfig.e2e.json",
+            "devServerTarget": "popmotion:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "popmotion:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/popmotion-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**", "!apps/popmotion-e2e/**"]
+          }
+        }
+      }
+    },
+    "input-validation": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/workspace:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/input-validation",
+      "sourceRoot": "apps/input-validation/src",
+      "prefix": "demo",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/input-validation",
+            "index": "apps/input-validation/src/index.html",
+            "main": "apps/input-validation/src/main.ts",
+            "polyfills": "apps/input-validation/src/polyfills.ts",
+            "tsConfig": "apps/input-validation/tsconfig.app.json",
+            "assets": [
+              "apps/input-validation/src/favicon.ico",
+              "apps/input-validation/src/assets"
+            ],
+            "styles": ["apps/input-validation/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/input-validation/src/environments/environment.ts",
+                  "with": "apps/input-validation/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "input-validation:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "input-validation:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "input-validation:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/input-validation/tsconfig.app.json",
+              "apps/input-validation/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/input-validation/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/input-validation/jest.config.js",
+            "tsConfig": "apps/input-validation/tsconfig.spec.json",
+            "setupFile": "apps/input-validation/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "input-validation-e2e": {
+      "root": "apps/input-validation-e2e",
+      "sourceRoot": "apps/input-validation-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/input-validation-e2e/cypress.json",
+            "tsConfig": "apps/input-validation-e2e/tsconfig.e2e.json",
+            "devServerTarget": "input-validation:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "input-validation:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/input-validation-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**", "!apps/input-validation-e2e/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

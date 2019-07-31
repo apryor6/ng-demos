@@ -19,6 +19,18 @@
     },
     "radio": {
       "tags": []
+    },
+    "popmotion-e2e": {
+      "tags": []
+    },
+    "popmotion": {
+      "tags": []
+    },
+    "input-validation-e2e": {
+      "tags": []
+    },
+    "input-validation": {
+      "tags": []
     }
   }
 }
